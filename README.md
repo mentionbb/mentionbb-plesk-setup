@@ -85,7 +85,7 @@ You should edit the `mentionbb.com` part according to your own virtual host path
 
 ![resim](https://github.com/user-attachments/assets/59926859-d744-4f28-88b4-f632086d7430)
 
-* Repository name is `mentionbb.git`
+* Repository name is `your choice`
 * Repo Url is `https://github.com/mentionbb/mentionbb.git`
 
 After this step, you should import the `db.sql` file in the root directory and write the information in `src/DbConfig.php`.
