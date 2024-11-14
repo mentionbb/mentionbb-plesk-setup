@@ -88,4 +88,24 @@ You should edit the `mentionbb.com` part according to your own virtual host path
 * Repository name is `your choice`
 * Repo Url is `https://github.com/mentionbb/mentionbb.git`
 
-After this step, you should import the `db.sql` file in the root directory and write the information in `src/DbConfig.php`.
+## Composer
+
+![resim](https://github.com/user-attachments/assets/6d3678e8-deb5-445d-92ad-a0875d659abc)
+
+- Then you need set `Mode` to `Developer Mode`.
+
+![resim](https://github.com/user-attachments/assets/12d9984f-1d34-4edf-b876-f15107443bb0)
+
+- And click `Install`.
+
+### Or
+* Go to `src` folder.
+* Simply extract `vendor.zip` same directory.
+
+After this step, you should import the `db.sql` file in the root directory and write the information in `.env.example` and then rename to `.env`.
+
+Or Command-line
+```bash
+php bin/console mention:install-db [--dbadapter DBADAPTER] [--user USER] [--password PASSWORD] [--dbname DBNAME] [--dbhost DBHOST]
+```
+*Excluding square brackets
