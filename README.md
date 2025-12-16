@@ -17,7 +17,7 @@
 
 ## Hosting settings
 
-- Document Root should be `httpdocs/public`. Mention uses `public` path as the main directory, if you specify root directory there are sensitive files in this section. It should be `public`.
+- Document Root should be `httpdocs/www/public`. Mention uses `public` path as the main directory, if you specify root directory there are sensitive files in this section. It should be `public`.
 
 ![resim](https://github.com/user-attachments/assets/19a25b1d-b760-486f-80a1-e9358b239022)
 
@@ -55,7 +55,7 @@ location ~ ^/index\.php(/|$) {
 	add_header 'Access-Control-Allow-Headers' 'Authorization,DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
 	add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-	fastcgi_pass unix:/run/php/php8.3-fpm.sock;
+	fastcgi_pass unix:/run/php/php8.4-fpm.sock;
 	fastcgi_split_path_info ^(.+\.php)(/.*)$;
 	include fastcgi_params;
 	fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
@@ -72,12 +72,12 @@ location = /favicon.ico {
 }
 
 include /etc/nginx/mime.types;
-include /var/www/vhosts/mentionbb.com/httpdocs/.nginx.conf;
+include /var/www/vhosts/mentionbb.com/httpdocs/www/.nginx.conf;
 ```
 
 You need to edit the code in the last line.
 
-`include /var/www/vhosts/mentionbb.com/httpdocs/.nginx.conf;`
+`include /var/www/vhosts/mentionbb.com/httpdocs/www/.nginx.conf;`
 
 You should edit the `mentionbb.com` part according to your own virtual host path.
 
@@ -99,7 +99,7 @@ You should edit the `mentionbb.com` part according to your own virtual host path
 - And click `Install`.
 
 ### Or
-* Go to `src` folder.
+* Go to `www/src` folder.
 * Simply extract `vendor.zip` same directory.
 
 After this step, you should import the `db.sql` file in the root directory and write the information in `.env.example` and then rename to `.env`.
